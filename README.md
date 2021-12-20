@@ -1,14 +1,37 @@
 # Example-Puerts-TypeScript-Unity
 
-Puerts + TypeScript を使って Unity 開発を行うサンプルプロジェクトです。これを元に開発を始めることもできます。
+Puerts + TypeScript を使って Unity 開発を行うサンプルプロジェクトです。  
+これを元に開発を始めることもできます。
 
 ## Usage
 
 記載のコマンドは基本的に Windows 環境です。
 
+- 必要なもの
+  - Git
+    - リポジトリの DL に必要
+  - Node.js
+    - TypeScript 開発に必要
+  - VSCode
+    - TypeScript 開発に最も最適
+  - curl
+    - 必須ファイルの DL に必要
+  - wget
+    - 必須ファイルの DL に必要
+  - jq
+    - 必須ファイルの DL に必要
+  - 7zip (コマンドライン)
+    - 必須ファイルの解凍に必要
+- あると便利なもの
+  - Visual Studio
+    - C# はこっちで書いたほうがいい
+
 ### 準備
 
-- まずクローンして落とす。
+- まずクローンして落とすか、[リポジトリをダウンロード](https://github.com/katai5plate/example-puerts-typescript-unity/archive/refs/heads/main.zip)して解凍する
+  - 以下のコマンドはクローンする場合のもの
+  - 解凍する場合は解凍したディレクトリをコマンドプロンプトで開く
+    - このリポジトリを元に新たにゲームを作る場合は、ダウンロードするほうがおすすめ。
 
 ```
 git clone --depth 1 https://github.com/katai5plate/example-puerts-typescript-unity.git
@@ -24,7 +47,7 @@ git clone --depth 1 https://github.com/chexiongsheng/puerts_unity_demo.git
 
 - 関連ファイルも落として解凍する。 (便宜上、以後、解凍したものは `Plugins_Nodejs_latest` とする)
   - [手動でやる場合はここで `Node` とあるものを選ぶ。](https://github.com/Tencent/puerts/releases)
-  - 以下のコマンドは Windows 環境で curl, jq, wget, 7zip で頑張るとき用。
+  - 以下のコマンドは curl, jq, wget, 7zip で頑張るとき用。
 
 ```
 curl -s https://api.github.com/repos/Tencent/puerts/releases/latest > puerts_releases_latest.txt
@@ -36,8 +59,13 @@ wget -i puerts_latest_url.txt -O Plugins_Nodejs_latest.tgz
 - `./puerts/unity/Assets/Puerts` を `./Assets/Puerts` としてコピー
 - `./puerts/unity/Assets/Plugins` を `./Assets/PuertsPlugins` としてコピー
 - `./Plugins_Nodejs_latest/Plugins` の中身を `./Assets/PuertsPlugins` にコピー
-  - `./puerts_unity_demo/Assets/Plugins` には前述の Plugins には無いものも含まれているので、もし必要ならコピー
-- `./puerts_unity_demo/Assets/Examples/Editor` には Config ファイルがいくつか用意されているので、もし必要なら `./Assets/Editor/PuertsConfig.cs` としてコピー/上書き
+  - (※) `./puerts_unity_demo/Assets/Plugins` には前述の Plugins には無いものも含まれているので、もし必要ならコピー
+- (※) `./puerts_unity_demo/Assets/Examples/Editor` には Config ファイルがいくつか用意されているので、もし必要なら `./Assets/Editor/PuertsConfig.cs` としてコピー/上書き
+
+#### 面倒くさい場合
+
+- `./init.bat` を実行すれば、よしなにやってくれます。
+- 上記 `(※)` の部分は自動でやってくれないので手動でやってください。
 
 ### 初期設定
 
