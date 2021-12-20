@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "baseUrl": "src",
+    "paths": {
+      "csharp": ["../../Assets/Gen/Typing/csharp/index.d.ts"],
+      "puerts": ["../../Assets/Puerts/Typing/puerts/index.d.ts"]
+    },
+    "outDir": "dist"
+  }
+}
