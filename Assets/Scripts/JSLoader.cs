@@ -131,7 +131,7 @@ public class JSLoader : MonoBehaviour
 
     private void Awake()
     {
-        jsEnv = new JsEnv();
+        if(jsEnv == null) jsEnv = new JsEnv();
         jsEnv.Eval<This>("require('" + fileName + "')")(this, props);
         if (null != _awake) _awake();
     }
@@ -139,6 +139,77 @@ public class JSLoader : MonoBehaviour
     {
         if (null != _onDestroy) _onDestroy();
         jsEnv.Dispose();
+        _awake = null;
+        _onDestroy = null;
+        _update = null;
+        _fixedUpdate = null;
+        _lateUpdate = null;
+        _onGUI = null;
+        _start = null;
+        _reset = null;
+        _onAnimatorIK = null;
+        _onAnimatorMove = null;
+        _onApplicationFocus = null;
+        _onApplicationPause = null;
+        _onApplicationQuit = null;
+        _onAudioFilterRead = null;
+        _onBecameInvisible = null;
+        _onBecameVisible = null;
+        _onBeforeTransformParentChanged = null;
+        _onCanvasGroupChanged = null;
+        _onCollisionEnter = null;
+        _onCollisionEnter2D = null;
+        _onCollisionExit = null;
+        _onCollisionExit2D = null;
+        _onCollisionStay = null;
+        _onCollisionStay2D = null;
+        _onConnectedToServer = null;
+        _onControllerColliderHit = null;
+        _onDisable = null;
+        //_onDisconnectedFromMasterServer = null;
+        //_onDisconnectedFromServer = null;
+        _onDrawGizmos = null;
+        _onDrawGizmosSelected = null;
+        _onEnable = null;
+        //_onFailedToConnect = null;
+        //_onFailedToConnectToMasterServer = null;
+        _onJointBreak = null;
+        _onJointBreak2D = null;
+        //_onLevelWasLoaded = null;
+        //_onMasterServerEvent = null;
+        _onMouseDown = null;
+        _onMouseDrag = null;
+        _onMouseEnter = null;
+        _onMouseExit = null;
+        _onMouseOver = null;
+        _onMouseUp = null;
+        _onMouseUpAsButton = null;
+        //_onNetworkInstantiate = null;
+        _onParticleCollision = null;
+        _onParticleSystemStopped = null;
+        _onParticleTrigger = null;
+        _onParticleUpdateJobScheduled = null;
+        //_onPlayerConnected = null;
+        //_onPlayerDisconnected = null;
+        _onPostRender = null;
+        _onPreCull = null;
+        _onPreRender = null;
+        _onRectTransformDimensionsChange = null;
+        _onRectTransformRemoved = null;
+        _onRenderImage = null;
+        _onRenderObject = null;
+        //_onSerializeNetworkView = null;
+        _onServerInitialized = null;
+        _onTransformChildrenChanged = null;
+        _onTransformParentChanged = null;
+        _onTriggerEnter = null;
+        _onTriggerEnter2D = null;
+        _onTriggerExit = null;
+        _onTriggerExit2D = null;
+        _onTriggerStay = null;
+        _onTriggerStay2D = null;
+        _onValidate = null;
+        _onWillRenderObject = null;
     }
     private void Update()
     {
