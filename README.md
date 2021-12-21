@@ -29,22 +29,25 @@ Puerts + TypeScript を使って Unity 開発を行うサンプルプロジェ�
 
 ### 準備
 
-- まずクローンして落とすか、[リポジトリをダウンロード](https://github.com/katai5plate/example-puerts-typescript-unity/archive/refs/heads/main.zip)して解凍する
-  - 以下のコマンドはクローンする場合のもの
-  - 解凍する場合は解凍したディレクトリをコマンドプロンプトで開く
-    - このリポジトリを元に新たにゲームを作る場合は、ダウンロードするほうがおすすめ。
+- [リポジトリをダウンロード](https://github.com/katai5plate/example-puerts-typescript-unity/archive/refs/heads/main.zip)して解凍するか、クローンする。
+  - **このリポジトリを元に新たにゲームを作る場合は、ダウンロードするほうがおすすめ。** (`.git` がついてこないので)
+  - ダウンロードする場合は解凍したディレクトリをコマンドプロンプトで開く。
+  - クローンする場合は以下のコマンドを実行。
 
 ```
 git clone --depth 1 https://github.com/katai5plate/example-puerts-typescript-unity.git
 cd example-puerts-typescript-unity
 ```
 
-#### 自動
+この先はどちらか好きなほうを。
+
+#### 自動で行う
 
 - Windows 環境なら `./init.bat` を管理者実行すれば、よしなにやってくれます。
 - 手動の `(※)` の部分は自動でやってくれないので自分でやってください。
+- 失敗したら諦めて手動でやってください。
 
-#### 手動
+#### 手動で行う
 
 - 関連リポジトリを落とす。
 
