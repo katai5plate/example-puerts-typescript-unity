@@ -13,7 +13,8 @@ Puerts + TypeScript を使って Unity 開発を行うサンプルプロジェ�
   - Node.js
     - TypeScript 開発に必要
   - VSCode
-    - TypeScript 開発に最も最適
+    - TypeScript 開発に最適
+- なくてもいいけど、この次で使うもの
   - curl
     - 必須ファイルの DL に必要
   - wget
@@ -38,7 +39,14 @@ git clone --depth 1 https://github.com/katai5plate/example-puerts-typescript-uni
 cd example-puerts-typescript-unity
 ```
 
-- 次に関連リポジトリを落とす。
+#### 自動
+
+- Windows 環境なら `./init.bat` を管理者実行すれば、よしなにやってくれます。
+- 手動の `(※)` の部分は自動でやってくれないので自分でやってください。
+
+#### 手動
+
+- 関連リポジトリを落とす。
 
 ```
 git clone --depth 1 https://github.com/Tencent/puerts.git
@@ -61,11 +69,6 @@ wget -i puerts_latest_url.txt -O Plugins_Nodejs_latest.tgz
 - `./Plugins_Nodejs_latest/Plugins` の中身を `./Assets/PuertsPlugins` にコピー
   - (※) `./puerts_unity_demo/Assets/Plugins` には前述の Plugins には無いものも含まれているので、もし必要ならコピー
 - (※) `./puerts_unity_demo/Assets/Examples/Editor` には Config ファイルがいくつか用意されているので、もし必要なら `./Assets/Editor/PuertsConfig.cs` としてコピー/上書き
-
-#### 面倒くさい場合
-
-- `./init.bat` を実行すれば、よしなにやってくれます。
-- 上記 `(※)` の部分は自動でやってくれないので手動でやってください。
 
 ### 初期設定
 
