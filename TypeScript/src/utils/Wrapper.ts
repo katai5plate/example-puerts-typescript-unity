@@ -84,24 +84,44 @@ class EventFunctionDefines {
 type EventFunctions = Partial<EventFunctionDefines>;
 type BindedBehaviour = UnityEngine.MonoBehaviour & EventFunctions;
 
-export default class extends EventFunctionDefines {
-  $: BindedBehaviour;
-  constructor(bindTo: BindedBehaviour) {
-    super();
-    this.$ = bindTo;
-    const that = this;
-    for (let name of Object.getOwnPropertyNames(
-      EventFunctionDefines.prototype
-    ) as (keyof EventFunctions)[]) {
-      const fn = that[name];
-      if (
-        typeof fn === "function" &&
-        fn.toString() !== super[name].toString()
-      ) {
-        this.$[name] = function (...args: unknown[]) {
-          return (that[name] as (...a: unknown[]) => any)(...args);
-        };
+type WrapperArgs = [bindTo: BindedBehaviour, propsJSON: string | void];
+
+export default <Props extends {} = {}>() =>
+  class W extends EventFunctionDefines {
+    $: BindedBehaviour;
+    props?: Props;
+    constructor(
+      args: WrapperArgs | unknown[],
+      options?: {
+        defaultProps: Props;
+      }
+    ) {
+      super();
+      const [bindTo, propsJSON] = args as WrapperArgs;
+      const _options = options || {
+        defaultProps: {},
+      };
+      this.$ = bindTo;
+      if (propsJSON) {
+        try {
+          this.props = JSON.parse(propsJSON) || _options.defaultProps;
+        } catch (error) {
+          throw new Error(error);
+        }
+      }
+      const that = this;
+      for (let name of Object.getOwnPropertyNames(
+        EventFunctionDefines.prototype
+      ) as (keyof EventFunctions)[]) {
+        const fn = that[name];
+        if (
+          typeof fn === "function" &&
+          fn.toString() !== super[name].toString()
+        ) {
+          this.$[name] = function (...args: unknown[]) {
+            return (that[name] as (...a: unknown[]) => any)(...args);
+          };
+        }
       }
     }
-  }
-}
+  };

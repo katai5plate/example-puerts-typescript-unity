@@ -30,6 +30,11 @@ public class JSLoader : MonoBehaviour
     [SerializeField]
     TickTiming tickTiming = TickTiming.Update;
 
+    /// <summary>
+    /// JSON 形式で JS に送信するプロパティ
+    /// </summary>
+    public string props = "{}";
+
     // 以下、jsEnv.Eval 時に上書きされる関数
 
     /* 固有処理あり */
@@ -112,10 +117,11 @@ public class JSLoader : MonoBehaviour
     // 以下、内部で使用するもの
 
     /// <summary>
-    /// JS からインポートされた MonoBehaviour
+    /// JS で実行するモジュール
     /// </summary>
-    /// <param name="monoBehaviour"></param>
-    public delegate void This(JSLoader monoBehaviour);
+    /// <param name="bindTo">接続先</param>
+    /// <param name="json">送信するプロパティ JSON</param>
+    public delegate void This(JSLoader bindTo, string json);
 
     /// <summary>
     /// Puerts の JS 実行環境
@@ -125,7 +131,7 @@ public class JSLoader : MonoBehaviour
     private void Awake()
     {
         jsEnv = new JsEnv();
-        jsEnv.Eval<This>("require('" + fileName + "')")(this);
+        jsEnv.Eval<This>("require('" + fileName + "')")(this, props);
         if (null != _awake) _awake();
     }
     private void OnDestroy()

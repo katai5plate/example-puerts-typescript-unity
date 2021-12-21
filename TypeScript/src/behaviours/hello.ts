@@ -3,10 +3,10 @@ import Wrapper from "../utils/Wrapper";
 
 const { Vector3, Time } = UnityEngine;
 
-export = (bindTo: ConstructorParameters<typeof Wrapper>[0]) =>
-  new (class extends Wrapper {
-    constructor(bindTo) {
-      super(bindTo);
+export = (...args: unknown[]) =>
+  new (class extends Wrapper() {
+    constructor(...args: unknown[]) {
+      super(args);
     }
     _start(): void {
       console.log("Hello, World!");
@@ -18,4 +18,4 @@ export = (bindTo: ConstructorParameters<typeof Wrapper>[0]) =>
         Vector3.op_Multiply(new Vector3(-t, t * 0.25, -t * 0.5), SPEED)
       );
     }
-  })(bindTo);
+  })(...args);
