@@ -33,6 +33,7 @@ public class JSLoader : MonoBehaviour
     /// <summary>
     /// JSON 形式で JS に送信するプロパティ
     /// </summary>
+    [TextArea]
     public string props = "{}";
 
     // 以下、jsEnv.Eval 時に上書きされる関数
