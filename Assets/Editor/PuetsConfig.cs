@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 /// <summary>
 /// 如果你全ts/js编程，可以参考这份自动化配置
+/// ja: 完全なts/jsでコーディングする場合、この自動化設定を参考にすることができます
 /// </summary>
 [Configure]
 public class PuertsConfig
@@ -19,6 +20,7 @@ public class PuertsConfig
             return new List<Type>()
             {
                 //仅生成ts接口, 不生成C#静态代码
+                //ja: C# の静的コードではなく、ts の interface のみ生成
                 //typeof(Dictionary<int,int>)
             };
         }
@@ -31,6 +33,7 @@ public class PuertsConfig
             return new List<Type>()
             {
                 //打开这个可以优化Vector3的GC，但需要开启unsafe编译
+                //ja: これを有効化すると、Vector3 の GC が最適化されるが、unsafe コンパイルの有効化が必要
                 //typeof(Vector3),
             };
         }
@@ -42,6 +45,7 @@ public class PuertsConfig
             return new List<Type>()
             {
                //直接指定的类型
+               //ja: 直接指定の種類
                 typeof(JsEnv),
                 typeof(ILoader),
             };
@@ -53,6 +57,7 @@ public class PuertsConfig
         get
         {
             // 在这里添加名字空间
+            // ja: ここに名前空間を追加
             var namespaces = new List<string>()
             {
                 "UnityEngine",
@@ -93,11 +98,13 @@ public class PuertsConfig
         return IsExcluded(type.BaseType);
     }
     //需要排除的程序集
+    //ja: 除外するアセンブリ
     static List<string> excludeAssemblys = new List<string>{
         "UnityEditor.dll",
         "Assembly-CSharp-Editor.dll",
     };
     //需要排除的类型
+    //ja: 除外する型
     static List<string> excludeTypes = new List<string>
     {
         "UnityEngine.iPhone",
