@@ -102,7 +102,9 @@ export default <Props extends {} = {}>() =>
         defaultProps: {},
       };
       this.$ = bindTo;
-      if (propsJSON) {
+      if (propsJSON === "") {
+        this.props = _options.defaultProps as Props;
+      } else if (propsJSON) {
         try {
           this.props = { ..._options.defaultProps, ...JSON.parse(propsJSON) };
         } catch (error) {
