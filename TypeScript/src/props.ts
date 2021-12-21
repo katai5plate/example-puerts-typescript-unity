@@ -1,4 +1,4 @@
-import Wrapper from "../utils/Wrapper";
+import Wrapper from "./utils/Wrapper";
 
 interface Props {
   name: string;

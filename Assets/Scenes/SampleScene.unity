@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11835d70d67a324faa8783646522fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: js/behaviours/props
+  fileName: js/props
   tickTiming: 0
   props: "{\n  \"name\": \"Ken\",\n  \"extCount\": 100\n}"
 --- !u!4 &426607587
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11835d70d67a324faa8783646522fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: js/behaviours/move
+  fileName: js/move
   tickTiming: 0
   props: '{ "speed": 2.0 }'
 --- !u!4 &611931709
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11835d70d67a324faa8783646522fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: js/behaviours/hello
+  fileName: js/hello
   tickTiming: 0
   props: '{}'
 --- !u!65 &1688902959

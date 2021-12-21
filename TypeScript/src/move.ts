@@ -1,5 +1,5 @@
 import { UnityEngine } from "csharp";
-import Wrapper from "../utils/Wrapper";
+import Wrapper from "./utils/Wrapper";
 
 const { Vector3, Time, Input, KeyCode } = UnityEngine;
 
