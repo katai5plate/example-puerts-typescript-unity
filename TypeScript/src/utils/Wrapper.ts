@@ -38,7 +38,7 @@ class EventFunctionDefines {
   // _onFailedToConnectToMasterServer(error: UnityEngine.NetworkConnectionError) {}
   _onJointBreak(breakForce: number) {}
   _onJointBreak2D(joint: UnityEngine.Joint2D) {}
-  _onLevelWasLoaded(level: number) {}
+  // _onLevelWasLoaded(level: number) {}
   // _onMasterServerEvent(msEvent: UnityEngine.MasterServerEvent) {}
   _onMouseDown() {}
   _onMouseDrag() {}

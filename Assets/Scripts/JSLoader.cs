@@ -79,7 +79,7 @@ public class JSLoader : MonoBehaviour
     //public Action<NetworkConnectionError> _onFailedToConnectToMasterServer;
     public Action<float> _onJointBreak;
     public Action<Joint2D> _onJointBreak2D;
-    public Action<int> _onLevelWasLoaded;
+    //public Action<int> _onLevelWasLoaded;
     //public Action<MasterServerEvent> _onMasterServerEvent;
     public Action _onMouseDown;
     public Action _onMouseDrag;
@@ -286,10 +286,10 @@ public class JSLoader : MonoBehaviour
     {
         if (null != _onJointBreak2D) _onJointBreak2D(joint);
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        if (null != _onLevelWasLoaded) _onLevelWasLoaded(level);
-    }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    if (null != _onLevelWasLoaded) _onLevelWasLoaded(level);
+    //}
     //private void OnMasterServerEvent(MasterServerEvent msEvent)
     //{
     //    if (null != _onMasterServerEvent) _onMasterServerEvent( msEvent);
